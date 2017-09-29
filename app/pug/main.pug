@@ -1,3 +1,66 @@
 |
 |
 // MAIN
+|
+|
+a(href='google.com') Google.com
+|
+|
+a.button(href='#a') Some titile
+
+- var someFalse = false;
+- var someTrue = true;
+
+div(class = someFalse ? 'ThisIsTrue' : 'ThisIsFalse')
+div(class = someTrue ? 'ThisIsTrue' : 'ThisIsFalse')
+
+
+form 
+    input(
+        type = 'checkbox',
+        name = 'argument',
+        checked
+    )
+
+- var btnType = 'info'
+- var btnSize = 'lg'
+button(type='button' class='btn btn-' + btnType + ' btn-' + btnSize)
+button(type='button' class=`btn btn-${btnType} btn-${btnSize}`)
+
+
+
+- for (var i = 0; i < 10; i++)
+    ul
+        - for (var j = 0; j < 10; j++)
+            li item
+
+
+- var list = ["Uno", "Dos", "Tres","Cuatro", "Cinco", "Seis"];
+ul.someClas#someID
+    each item in list
+        li=item
+
+p    'This code is <strong>not</strong> escaped!'
+p 
+    = 'This code is <strong>not</strong> escaped!'
+p 
+    != 'This code is <strong>not</strong> escaped!'
+
+
+- var user = { description: 'foo bar baz' }
+- var authorised = false
+#user
+  if user.description
+    h2.green Description
+    p.description= user.description
+  else if authorised
+    h2.blue Description
+    p.description.
+      User has no description,
+      why not add one...
+  else
+    h2.red Description
+    p.description User has no description
+
+
+// END MAIN
